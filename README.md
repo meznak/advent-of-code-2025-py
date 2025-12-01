@@ -6,7 +6,7 @@ https://adventofcode.com/2025
 * poetry
 
 ## Installation
-`poetry install`
+`poetry install --no-root`
 
 ### Test
 #### All days
