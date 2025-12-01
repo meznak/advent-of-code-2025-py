@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Run pytest on the current file under the debugger (no coverage).
+            "name": "Debug: pytest current file",
+            "type": "python",
+            "request": "launch",
+            "module": "pytest",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "${file}"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            // Run `python -m dayXX` under the debugger.
+            "name": "Debug: dayXX main",
+            "type": "python",
+            "request": "launch",
+            "module": "day01",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

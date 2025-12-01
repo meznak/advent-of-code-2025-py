@@ -1,0 +1,25 @@
+{
+    // ---- Interpreter / environment ----
+    "python.defaultInterpreterPath": "/home/nplamondon/.cache/pypoetry/virtualenvs/advent-of-code-2025-py-2_STgWNJ-py3.11/bin/python",
+    // ---- Testing (pytest) ----
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    // ---- Linting (optional, if installed via Poetry) ----
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    // ---- Formatting (optional, if black is installed) ----
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    // ---- Imports (optional, if isort is installed) ----
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    // ---- Analysis / IntelliSense ----
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true
+}
