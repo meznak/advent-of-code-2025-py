@@ -1,6 +1,6 @@
 # TODO: Add day and title
 '''
-Advent of Code 2022 Day XX
+Advent of Code 2025 Day XX
 TITLE
 '''
 
