@@ -3,7 +3,7 @@ Advent of Code 2025 Day 02
 Gift Shop
 '''
 
-SAMPLE_SOLUTIONS = [1227775554]
+SAMPLE_SOLUTIONS = [1227775554, 4174379265]
 
 
 def parse_data(dataset: list) -> list:
@@ -50,6 +50,26 @@ def solve_1(dataset: list) -> int:
 def solve_2(dataset: list) -> int:
     '''Solve part 2'''
 
+    invalid_sum = 0
+
     for item in dataset:
-        # TODO: Build solution
-        pass
+        for number in range(int(item[0]), int(item[1]) + 1):
+            numstr = str(number)
+            length = len(numstr)
+            half = length // 2
+
+            for segment_length in range(1, half + 1):
+                match = True
+                first_segment = numstr[:segment_length]
+                for segment_start in range(segment_length, length, segment_length):
+                    segment_end = segment_start + segment_length
+                    next_segment = numstr[segment_start:segment_end]
+                    if first_segment != next_segment:
+                        match = False
+                        break
+
+                if match:
+                    invalid_sum += number
+                    break
+
+    return invalid_sum
