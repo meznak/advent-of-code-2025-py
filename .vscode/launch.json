@@ -17,9 +17,9 @@
         {
             // Run `python -m dayXX` under the debugger.
             "name": "Debug: dayXX main",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
-            "module": "day01",
+            "module": "${relativeFileDirname}",
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
             "justMyCode": true

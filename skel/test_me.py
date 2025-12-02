@@ -12,11 +12,13 @@ from . import __main__ as tmain
 
 @pytest.fixture
 def sample():
+    '''Sample data, one list item per line'''
     return []
 
 
 @pytest.fixture
 def parsed():
+    '''Expected parser output'''
     return []
 
 

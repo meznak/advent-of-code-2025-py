@@ -4,8 +4,7 @@ Unit tests
 
 import pytest
 
-# TODO: Change from skel to current day
-from skel import *
+from day01 import *
 
 from . import __main__ as tmain
 
