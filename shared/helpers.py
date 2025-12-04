@@ -99,3 +99,27 @@ def get_neighbors(grid: list, current_position: tuple) -> list:
         neighbors.append((neighbor_y, neighbor_x))
 
     return neighbors
+
+def get_eight_neighbors(grid: list, current_position: tuple) -> list:
+    '''Return a list of a position's neighbors'''
+
+    row_count = len(grid)
+    col_count = len(grid[0])
+    neighbors = []
+
+    for y in range(-1, 2):
+        for x in range(-1, 2):
+            neighbor_y = current_position[0] + y
+            if not 0 <= neighbor_y < row_count:
+                continue
+
+            neighbor_x = current_position[1] + x
+            if not 0 <= neighbor_x < col_count:
+                continue
+
+            if (neighbor_y, neighbor_x) == current_position:
+                continue
+
+            neighbors.append((neighbor_y, neighbor_x))
+
+    return neighbors
