@@ -48,31 +48,41 @@ def solve_2(dataset: list) -> int:
     '''Solve part 2'''
 
     ranges = dataset[0]
-    ranges.sort()
     new_ranges = []
     changed = True
 
     while changed:
         changed = False
+        skip_next = 0
+        length = len(ranges)
+        ranges.sort()
 
-        for range in ranges:
-            for other in ranges:
-                if range == other:
-                    continue
-                if range[0] < other[0] and other[0] < range[1] < other[1]:
-                    new_ranges.append([range[0], other[1]])
+        for i in range(length - 1):
+            curr = ranges[i]
+
+            if skip_next > 0:
+                skip_next -= 1
+                continue
+
+            for j in range(i + 1, length):
+                other = ranges[j]
+                if curr[1] >= other[0]:
+                    curr[1] = other[1]
                     changed = True
+                    skip_next += 1
+                elif j == length - 1 and j != i + skip_next:
+                    new_ranges.append(other)
+                else:
                     break
+            new_ranges.append(curr)
 
-            if not changed:
-                new_ranges.append(range)
-        ranges = new_ranges
-        new_ranges = []
-
+        if changed:
+            ranges = new_ranges
+            new_ranges = []
 
     fresh_count = 0
 
-    for range in ranges:
-        fresh_count += range[1] - range[0] + 1
+    for i in ranges:
+        fresh_count += i[1] - i[0] + 1
 
     return fresh_count
